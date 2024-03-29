@@ -52,7 +52,7 @@ class AudioFile(Base):
     name = Column(String(250))
     audio_data = Column(LargeBinary(length=(2**32)-1))
 
-engine = create_engine("cockroachdb://Saketh:nMrGR4cAKnEmZxvbc60Yig@crewsk3s-14103.8nj.gcp-europe-west1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full")
+engine = create_engine("postgresql://Saketh:nMrGR4cAKnEmZxvbc60Yig@crewsk3s-14103.8nj.gcp-europe-west1.cockroachlabs.cloud:26257/defaultdb")
 Session = sessionmaker(bind=engine)
 Base.metadata.create_all(engine)
 
